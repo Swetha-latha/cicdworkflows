@@ -2,18 +2,18 @@ name: Github CI pipeline testing the html file
 on:
   push:
     branches:
-      -main
+      - main
 jobs:
     validate:
         runs-on: ubuntu-latest
         steps:
-          -name: Checkout repository
-          uses: actions/checkout@v4
-          -name: Validate HTML file
-          run: |
-               if [ -f "index.html"]; then
+          - name: Checkout repository
+            uses: actions/checkout@v4
+          - name: Validate HTML file
+            run: |
+               if [ -f "index.html" ]; then
                    echo "index.html file exists."
                else
-                    echo "inde.html file does not exists"
+                    echo "index.html file does not exist"
                     exit 1
                fi
